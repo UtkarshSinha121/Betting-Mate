@@ -107,19 +107,27 @@
         <h2 class="card-title" style="font-family: 'Montserrat';">{{ team1_name }}</h2>
         </div>
         </div>
-        
         {% for player1 in players1 %}
-        <div class="card rounded-0"  >
-            <div class="card-body">
-                <div class="player-item">
-                    <input type="checkbox" name="player1" value="{{ player1 }}" class="player-checkbox" onchange="updateCount('team1', this)">
-                    <span style="font-family: 'Montserrat';">{{ player1 }}</span>
-                    <div class="count"></div>
-                </div>
+    <div class="card rounded-0" id="card-{{ player1 }}">
+        <div class="card-body">
+            <div class="player-item">
+                <input type="checkbox" id="checkbox-{{ player1 }}" name="player1" value="{{ player1 }}" class="player-checkbox" onchange="updateCount('team1', this)">
+                <span style="font-family: 'Montserrat';">{{ player1 }}</span>
+                <div class="count"></div>
             </div>
         </div>
-           
-        {% endfor %}
+    </div>
+    <script>
+        document.getElementById('card-{{ player1 }}').addEventListener('click', function(e) {
+            var checkbox = document.getElementById('checkbox-{{ player1 }}');
+            if (e.target !== checkbox) {
+                checkbox.checked = !checkbox.checked;
+                updateCount('team1', checkbox);
+            }
+        });
+    </script>
+{% endfor %}
+        
     </div>
 
     <div class="team-container" id="team2">
@@ -128,27 +136,41 @@
         <h2 class="card-title" style="font-family: 'Montserrat';">{{ team2_name }}</h2>
         </div>
         </div>
+        
         {% for player2 in players2 %}
-        <div class="card rounded-0">
-            <div class="card-body">
+    <div class="card rounded-0" id="card-{{ player2 }}">
+        <div class="card-body">
             <div class="player-item">
-                <input type="checkbox" name="player2" value="{{ player2 }}" class="player-checkbox" onchange="updateCount('team2', this)">
+                <input type="checkbox" id="checkbox-{{ player2 }}" name="player2" value="{{ player2 }}" class="player-checkbox" onchange="updateCount('team2', this)">
                 <span style="font-family: 'Montserrat';">{{ player2 }}</span>
                 <div class="count"></div>
             </div>
-            </div>
-            </div>
-        {% endfor %}
+        </div>
+    </div>
+    <script>
+        document.getElementById('card-{{ player2 }}').addEventListener('click', function(e) {
+            var checkbox = document.getElementById('checkbox-{{ player2 }}');
+            if (e.target !== checkbox) {
+                checkbox.checked = !checkbox.checked;
+                updateCount('team2', checkbox);
+            }
+        });
+    </script>
+{% endfor %}
     </div>
 
     <br style="clear: both;">
     <div class="d-flex justify-content-center align-items-center ">
         <input type="submit" value="Submit">
     </div>
-
+   
     
     
 </form>
+<div id="spinner" style="display: none;">
+    <div class="spinner"></div>
+   <h2 class="text-center fw-bolder" style="text-shadow:  2px 2px 4px #f9f6f6;     margin-top: 200px; font-family: 'Montserrat';">Finding Best Perfoming Team...</h2>
+</div>
 </div>
 <!-- IPL Banner - 2 -->
 <div class='ipl-banner-right position-fixed' style="top:110px">
@@ -199,9 +221,17 @@
         var countElement = checkbox.parentNode.querySelector('.count');
         var checkedCount = document.querySelectorAll('#' + teamId + ' .player-checkbox:checked').length;
 
-        // Only display the count if it's greater than 0
-        countElement.textContent = checkedCount > 0 ? checkedCount : '';
+        // Only display the count if checkbox is ckecked
+        countElement.textContent = checkbox.checked ? checkedCount : '';
     }
+
+    document.querySelector('form').addEventListener('submit', function() {
+    document.querySelector('#spinner').style.display = 'block';
+    document.querySelector('form').classList.add('loading');
+
+
+    
+});
 </script>
 
 </body>
