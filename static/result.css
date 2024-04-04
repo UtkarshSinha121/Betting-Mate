@@ -7,7 +7,7 @@ body {
     flex-direction: column;
     align-items: center;
     min-height: 100vh;
-    /* background-image: url('bgimage.png'); */
+    background-color: rgba(200, 200, 227, 0.991); 
 }
 
 h2 {
@@ -16,12 +16,14 @@ h2 {
 }
 
 table {
-    width: 50%;
+    width: 47%;
     border-collapse: collapse;
     margin: 20px 0;
     font-size: 14px;
     border-radius: 8px;
     overflow-x: auto;
+    background-color: #fff;
+    font-family: 'Montserrat', sans-serif;
 }
 
 th, td {
@@ -34,7 +36,7 @@ th, td {
 }
 
 th {
-    background-color: #4CAF50;
+    background-color:#1c185c !important;
     color: white;
     border-radius: 8px 0 0 0;
 }

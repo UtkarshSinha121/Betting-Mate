@@ -443,7 +443,7 @@ def select_team():
               
         else:
             error_message = 'Please select exactly 11 players for both teams.'
-            return render_template('player.html', players1=players1, players2=players2, error_message=error_message)
+            return render_template('player.html', players1=players1, players2=players2, team1_name=user_choice1, team2_name=user_choice2, error_message=error_message)
 
         t1 = get_players(Team_1, Team_2, Team1_Squad)
         t2 = get_players(Team_2, Team_1, Team2_Squad)
@@ -452,6 +452,8 @@ def select_team():
         t3.sort(reverse=True)
         Team = pd.DataFrame(t3)
         Result = Team[1].head(11)
+        Result = Result.reset_index(drop=True)
+        Result.index += 1
         Result = pd.DataFrame(Result)
         print('\nFinal Predicted Team',Result)
 

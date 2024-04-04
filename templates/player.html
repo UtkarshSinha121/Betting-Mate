@@ -17,8 +17,8 @@
      <link href="https://fonts.googleapis.com/css?family=Montserrat:100,200,300,regular,500,600,700,800,900,100italic,200italic,300italic,italic,500italic,600italic,700italic,800italic,900italic" rel="stylesheet" />
 </head>
 <body>
-    <header>
-    <nav class="navbar navbar-expand-lg ">
+   
+    <nav class="navbar w-100 position-fixed " style="z-index: 1">
         <!-- <a class="navbar-brand" href="#">Navbar</a> -->
     
         <div class="d-flex align-item-center" >
@@ -26,31 +26,31 @@
            <h3 class='mx-5 fs-1 text-white ' style="font-family: 'Dancing Script'; font-weight: '2000px';" >Betting Mate!</h3> 
             
           </div>
+          <ul class=" ms-auto mb-2 d-flex">
+            <li class="nav-item ">
+                <a class="nav-link  xyz" href="#">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link  xyz" href="#">Features</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link xyz" href="#">Pricing</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link xyz" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+            </li>
+        </ul>
       
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
-        </button>
+        </button> -->
         <div class="collapse navbar-collapse" id="navbarNav" style ="margin-right: 50px;">
-            <ul class="navbar-nav ms-auto mb-2 ">
-                <li class="nav-item active">
-                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Features</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Pricing</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-                </li>
-            </ul>
+            
         </div>
-    </nav> 
-</header>
+    </nav>
 
 <!-- IPL Banner - 1 -->
-<div class='ipl-banner-left'>
+<div class='ipl-banner-left position-fixed' style="top:110px">
 
     <div class="slider-frame">
         <div class="slide-images-up">
@@ -92,41 +92,66 @@
     </div>
 
 </div>
+<div class="" >
+<h1 class=" pt-5 text-center fw-bold " style="margin-top: 70px; color:rgb(12, 12, 12); font-family: 'Montserrat';">Select Players</h1>
 
-<h1>Select Playing 11</h1>
 {% if error_message %}
-    <p style="color: red;"><b>{{ error_message }}</b></p>
+    <p style="color: red; font-family: 'Montserrat';" class="text-center"><b>{{ error_message }}</b></p>
 {% endif %}
 
-<form method="post">
-    <div class="team-container" id="team1">
-        <h2>Team 1</h2>
+<form method="post" class="mb-5">
+    <div class="team-container" id="team1" >
+       
+        <div class="card team-name">
+            <div class="card-body">
+        <h2 class="card-title" style="font-family: 'Montserrat';">{{ team1_name }}</h2>
+        </div>
+        </div>
+        
         {% for player1 in players1 %}
-            <div class="player-item">
-                <input type="checkbox" name="player1" value="{{ player1 }}" class="player-checkbox" onchange="updateCount('team1', this)">
-                <span>{{ player1 }}</span>
-                <div class="count"></div>
+        <div class="card rounded-0"  >
+            <div class="card-body">
+                <div class="player-item">
+                    <input type="checkbox" name="player1" value="{{ player1 }}" class="player-checkbox" onchange="updateCount('team1', this)">
+                    <span style="font-family: 'Montserrat';">{{ player1 }}</span>
+                    <div class="count"></div>
+                </div>
             </div>
+        </div>
+           
         {% endfor %}
     </div>
 
     <div class="team-container" id="team2">
-        <h2>Team 2</h2>
+        <div class="card  team-name2">
+            <div class="card-body">
+        <h2 class="card-title" style="font-family: 'Montserrat';">{{ team2_name }}</h2>
+        </div>
+        </div>
         {% for player2 in players2 %}
+        <div class="card rounded-0">
+            <div class="card-body">
             <div class="player-item">
                 <input type="checkbox" name="player2" value="{{ player2 }}" class="player-checkbox" onchange="updateCount('team2', this)">
-                <span>{{ player2 }}</span>
+                <span style="font-family: 'Montserrat';">{{ player2 }}</span>
                 <div class="count"></div>
+            </div>
+            </div>
             </div>
         {% endfor %}
     </div>
 
     <br style="clear: both;">
-    <input type="submit" value="Submit">
-</form>
+    <div class="d-flex justify-content-center align-items-center ">
+        <input type="submit" value="Submit">
+    </div>
 
+    
+    
+</form>
+</div>
 <!-- IPL Banner - 2 -->
-<div class='ipl-banner-right'>
+<div class='ipl-banner-right position-fixed' style="top:110px">
 
     <div class="slider-frame">
         <div class="slide-images-down">

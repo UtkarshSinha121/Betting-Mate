@@ -6,12 +6,13 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='footer.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='result.css') }}">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:100,200,300,regular,500,600,700,800,900,100italic,200italic,300italic,italic,500italic,600italic,700italic,800italic,900italic" rel="stylesheet" />
     <script>
         document.addEventListener("DOMContentLoaded", function() {
             // Get the second table header element
             var headerCell1 = document.querySelector("table th:nth-child(1)");
             if (headerCell1){
-                headerCell1.textContent = "Sr"
+                headerCell1.textContent = "Sr No."
             }
             var headerCell = document.querySelector("table th:nth-child(2)");
 
@@ -26,7 +27,7 @@
 <body>
 
 <!-- IPL Banner - 1 -->
-<div class='ipl-banner-left'>
+<div class='ipl-banner-left' style="top: 110px">
 
     <div class="slider-frame">
         <div class="slide-images-up">
@@ -69,11 +70,11 @@
 
 </div>
 
-    <h2>Final Predicted Team</h2>
+    <h1 style="color:rgb(12, 12, 12); font-family: 'Montserrat'; " class="fs-2">Final Predicted Team</h1>
     {{ predicted_team | safe }}
 
 <!-- IPL Banner - 2 -->
-<div class='ipl-banner-right'>
+<div class='ipl-banner-right' style="top: 110px">
 
     <div class="slider-frame">
         <div class="slide-images-down">
