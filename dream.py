@@ -51,13 +51,13 @@ pbks_fp = { 'S Dhawan':111,'MA Agarwal':111, 'M Shahrukh Khan':111 , 'RD Chahar'
             'NT Ellis':111,   'Bhanuka Rajapakse': 111, 'Shivam Singh': 111, 'Mohit Rathee': 111, 'Vidwath Kaverappa': 111, 'R Bhatia':111, 'Sikandar Raza': 111, 'SM Curran':111 ,}
 
 #TEAM 3
-csk = ['MS Dhoni', 'Matheesha Pathirana', 'Shivam Dube','RD Gaikwad','AT Rayudu', 'MM Ali' ,'RA Jadeja','AM Rahane','Devon Conway', 'DL Chahar','MJ Santner']
+csk = ['MS Dhoni', 'Matheesha Pathirana', 'Shivam Dube','RD Gaikwad','SN Thakur', 'MM Ali' ,'RA Jadeja','AM Rahane','Devon Conway', 'DL Chahar','MJ Santner']
 
-csk_fp = {'MS Dhoni':111, 'Devon Conway':111,'RD Gaikwad':111,'AT Rayudu':111,'Shivam Dube':111, 
-          'MM Ali':111,'RA Jadeja':111,'Simarjeet Singh':111,'Subhranshu Senapati':111,'Matheesha Pathirana':111,
-          'TU Deshpande':111,'Bhagath Varma':111,'Ajay Mandal':111,'KA Jamieson':111,'Nishant Sindhu':111,
-          'Shaik Rasheed':111, 'BA Stokes':111, 'AM Rahane':111,'DL Chahar':111,'D Pretorius':111,'M Theekshana':111,'MJ Santner':111,
-          'Mukesh Choudhary' : 111,  'PH Solanki':111, 'RS Hangargekar':111, }
+csk_fp = {'MS Dhoni':400, 'Devon Conway':111,'RD Gaikwad':111,'SN Thakur':111,'Shivam Dube':111, 
+          'MM Ali':111,'RA Jadeja':111,'Simarjeet Singh':111,'Shaik Rasheed':111,'Matheesha Pathirana':111,
+          'TU Deshpande':111,'Avanish Rao Aravelly':111,'Ajay Mandal':111,'Rachin Ravindra':111,'Nishant Sindhu':111,
+          'Shaik Rasheed':111, 'Daryl Mitchell':111, 'AM Rahane':111,'DL Chahar':111,'Mustafizur Rahman':111,'M Theekshana':111,'MJ Santner':111,
+          'Mukesh Choudhary' : 111,  'PH Solanki':111, 'RS Hangargekar':111, 'Sameer Rizvi':111,}
 
 #TEAM 4
 kkr = ['N Rana','AD Russell', 'UT Yadav', 'SP Narine','Rahmanullah Gurbaz', 
@@ -69,12 +69,12 @@ kkr_fp = {'N Rana':326, 'AD Russell':545, 'SP Narine':172, 'Shakib Al Hasan':120
               'Suyash Sharma':111 , 'VG Arora':111 ,'N Jagadeesan':111 ,'Anukul Roy':111,}
 
 #TEAM 5
-dc = ['DA Warner', 'A Nortje','AR Patel', 'C Sakariya', 'KL Nagarkoti', 'Kuldeep Yadav', 'Lalit Yadav', 'L Ngidi', 'MR Marsh', 'Mustafizur Rahman','PP Shaw']
+# dc = ['DA Warner', 'A Nortje','AR Patel', 'Rishabh Pant', 'T Stubbs', 'Kuldeep Yadav', 'Lalit Yadav', 'HC Brook', 'MR Marsh', 'JA Richardson','PP Shaw']
 
-dc_fp = {'Aman Khan':111,'DA Warner':111, 'A Nortje':111,'AR Patel':111, 'C Sakariya':111, 'KL Nagarkoti': 111, 'Kuldeep Yadav':111,
-             'Lalit Yadav': 111, 'L Ngidi':111, 'MR Marsh':111, 'Mustafizur Rahman':111, 'P Dubey':111, 
-             'PP Shaw':111, 'Ripal Patel':111,'R Powell':111,'Sarfaraz Khan':111,'KK Ahmed':111,'Vicky Ostwal':111,'YV Dhull':111,
-             'RR Rossouw':111,'MK Pandey':111,'Mukesh Kumar':111,'I Sharma':111,'PD Salt':111,}
+dc_fp = {'Rishabh Pant':111,'DA Warner':111, 'A Nortje':111,'AR Patel':111, 'Shai Hope':111, 'Swastik Chikara': 111, 'Kuldeep Yadav':111,
+             'Lalit Yadav': 111, 'Abishek Porel':111, 'MR Marsh':111, 'HC Brook':111, 'P Dubey':111, 
+             'PP Shaw':111, 'Rickey Bhui':111,'Kumar Kushagra':111,'T Stubbs':111,'KK Ahmed':111,'Vicky Ostwal':111,'YV Dhull':111,
+             'Sumit Kumar':111,'Jake Fraser-McGurk':111,'Mukesh Kumar':111,'I Sharma':111,'JA Richardson':111,'Rasikh Dar':111,}
 
 #TEAM 6
 rcb= ['V Kohli' , 'GJ Maxwell' ,  'Mohammed Siraj',  'JR Hazlewood' ,'RM Patidar' , 'Anuj Rawat' , 'Shahbaz Ahmed',  'KD Karthik' ,'KV Sharma' , 'Wanindu Hasaranga' ,  'HV Patel' ]
@@ -323,9 +323,14 @@ def selection2(Team_2):
 '''
 
 @app.route('/')
-def home():
+def login():
     # Render the 'login.html' template
     return render_template('login.html')
+
+@app.route('/home')
+def home():
+    return render_template('home.html')
+
 
 @app.route('/about')
 def about():

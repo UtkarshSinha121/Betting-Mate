@@ -17,43 +17,47 @@
           <script src="{{ url_for('static', filename='js/test.js') }}"></script>
       <link rel="stylesheet" href="{{ url_for('static', filename='index.css') }}">
       <link rel="stylesheet" href="{{ url_for('static', filename='footer.css') }}">
-
+      <link rel="stylesheet"  href="../static/home.css">
+      <link href="https://fonts.googleapis.com/css?family=Dancing+Script:regular,500,600,700" rel="stylesheet" />
+     <link href="https://fonts.googleapis.com/css?family=Montserrat:100,200,300,regular,500,600,700,800,900,100italic,200italic,300italic,italic,500italic,600italic,700italic,800italic,900italic" rel="stylesheet" />
       <title> {% block title %} {% endblock title %} - IPl Dream 11 Team Prediction</title>
   </head>
   
-  <body class="light" id="body">
-    <header>
-      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-          <div class="container-fluid">
-              <a class="navbar-brand" href="#"><b>Dream Team Predictor</b></a>
-              <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                  data-bs-target="#navbarNavDarkDropdown" aria-controls="navbarNavDarkDropdown" aria-expanded="false"
-                  aria-label="Toggle navigation">
-                  <span class="navbar-toggler-icon"></span>
-              </button>
-              <div class="collapse navbar-collapse" id="navbarNavDarkDropdown">
-                  <ul class="navbar-nav">
-                    
-                      <!-- Dropdown menu -->
-                      <li class="nav-item dropdown">
-                          <button class="btn btn-dark dropdown-toggle" data-bs-toggle="dropdown"
-                              aria-expanded="false">
-                              Menu
-                          </button>
-                          <ul class="dropdown-menu dropdown-menu-dark">
-                              <li><a class="dropdown-item" href="http://127.0.0.1:5000/index">Home</a></li>
-                              <li><a class="dropdown-item" href="#">About</a></li>
-                              <li><a class="dropdown-item" href="{{ url_for('contact') }}">Contacts</a></li>
-                          </ul>
-                      </li>
-                  </ul>
-              </div>
-          </div>
-      </nav>
-    </header>
+  <body class="light" id="body" >
+    <header>            
+       <nav class="navbar navbar-expand-lg ">
+        <!-- <a class="navbar-brand" href="#">Navbar</a> -->
     
+        <div class="d-flex align-item-center" >
+            <!-- <img className='rounded-circle' src={pic} alt="" width={40} height={40}/> -->
+           <h3 class='mx-5 fs-1 text-white ' style="font-family: 'Dancing Script'; font-weight: '2000px';" >Betting Mate!</h3> 
+            
+          </div>
+      
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav" style ="margin-right: 50px;">
+            <ul class="navbar-nav ms-auto mb-2 ">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Features</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Pricing</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+                </li>
+            </ul>
+        </div>
+    </nav> 
+    </header>
+    <div class="mb-5"> 
     <!-- IPL Banner - 1 -->
-    <div class='ipl-banner-left'>
+    <div class='ipl-banner-left '>
 
         <div class="slider-frame">
             <div class="slide-images-up">
@@ -97,11 +101,11 @@
     </div>
 
       <center>
-        <div class="container">
-            <div class="form">
-                <br><h4 style="color:red"><b>IPL Team Predictor</b></h4>
+        <div class="mt-5  mb-5 ">
+            <div class="form form-card border-0 ">
+                <br><h4 style="color:rgb(255, 255, 255); font-family: 'Montserrat'; " class="fs-3"> <b>IPL Team Predictor</b></h4>
             <form method="POST">
-              <div id="select" align="center">
+              <div id="select" >
                   <select name="team1" class="custom-select">
                       <option >Select Team 1</option>
                       <option value="MI">Mumbai Indians</option>
@@ -151,14 +155,17 @@
                   </select>
               </div>
               <div id="bt">
-                  <button type="submit">Submit</button>
+                  <button type="submit" >Submit</button>
               </div>
               <br>
             </form>
             </div>
         </div>
 
-    <!-- IPL Banner - 2 -->
+    
+      
+      </center> 
+      <!-- IPL Banner - 2 -->
     <div class='ipl-banner-right'>
 
         <div class="slider-frame">
@@ -200,14 +207,19 @@
             </div>
         </div>
 
-    </div>
-      
-      </center>      
+    </div> 
+</div>
+    <div class="mt-5">
+        <footer class="mt-5">
+            <p>&copy; 2024 Betting Mate! | All rights reserved.</p>
+          </footer>
+      </div>    
       <script src="script.js"></script>
 
+
+    
   </body>
-  <footer>
-    <p>&copy; 2023 Dream11 Team Predictor | All rights reserved.</p>
-  </footer>
+ 
+ 
 </html>
   

@@ -5,6 +5,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    background-color:rgba(65, 63, 181, 0.991);
     /* background-image: url('bgimage.png'); */
 }
 
