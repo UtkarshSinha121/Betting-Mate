@@ -56,7 +56,7 @@ csk = ['MS Dhoni', 'Matheesha Pathirana', 'Shivam Dube','RD Gaikwad','SN Thakur'
 csk_fp = {'MS Dhoni':400, 'Devon Conway':111,'Ruturaj Gaikwad':111,'Shardul Thakur':111,'Shivam Dube':111, 
           'Moeen Ali':111,'Ravindra Jadeja':111,'Simarjeet Singh':111,'Shaik Rasheed':111,'Matheesha Pathirana':111,
           'Tushar Deshpande':111,'Avanish Rao Aravelly':111,'Ajay Mandal':111,'Rachin Ravindra':111,'Nishant Sindhu':111,
-          'Shaik Rasheed':111, 'Daryl Mitchell':111, 'Ajinkya Rahane':111,'Deepak Chahar':111,'Mustafizur Rahman':111,'M Theekshana':111,'MJ Santner':111,
+          'Shaik Rasheed':111, 'Daryl Mitchell':111, 'Ajinkya Rahane':111,'Deepak Chahar':111,'Mustafizur Rahman':111,'Maheesh Theekshana':111,'Mitchell Santner':111,
           'Mukesh Choudhary' : 111,  'Prashant Solanki':111, 'Rajvardhan Hangargekar':111, 'Sameer Rizvi':111,}
 
 #TEAM 4
