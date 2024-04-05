@@ -53,11 +53,11 @@ pbks_fp = { 'S Dhawan':111,'MA Agarwal':111, 'M Shahrukh Khan':111 , 'RD Chahar'
 #TEAM 3
 csk = ['MS Dhoni', 'Matheesha Pathirana', 'Shivam Dube','RD Gaikwad','SN Thakur', 'MM Ali' ,'RA Jadeja','AM Rahane','Devon Conway', 'DL Chahar','MJ Santner']
 
-csk_fp = {'MS Dhoni':400, 'Devon Conway':111,'RD Gaikwad':111,'SN Thakur':111,'Shivam Dube':111, 
-          'MM Ali':111,'RA Jadeja':111,'Simarjeet Singh':111,'Shaik Rasheed':111,'Matheesha Pathirana':111,
-          'TU Deshpande':111,'Avanish Rao Aravelly':111,'Ajay Mandal':111,'Rachin Ravindra':111,'Nishant Sindhu':111,
-          'Shaik Rasheed':111, 'Daryl Mitchell':111, 'AM Rahane':111,'DL Chahar':111,'Mustafizur Rahman':111,'M Theekshana':111,'MJ Santner':111,
-          'Mukesh Choudhary' : 111,  'PH Solanki':111, 'RS Hangargekar':111, 'Sameer Rizvi':111,}
+csk_fp = {'MS Dhoni':400, 'Devon Conway':111,'Ruturaj Gaikwad':111,'Shardul Thakur':111,'Shivam Dube':111, 
+          'Moeen Ali':111,'Ravindra Jadeja':111,'Simarjeet Singh':111,'Shaik Rasheed':111,'Matheesha Pathirana':111,
+          'Tushar Deshpande':111,'Avanish Rao Aravelly':111,'Ajay Mandal':111,'Rachin Ravindra':111,'Nishant Sindhu':111,
+          'Shaik Rasheed':111, 'Daryl Mitchell':111, 'Ajinkya Rahane':111,'Deepak Chahar':111,'Mustafizur Rahman':111,'M Theekshana':111,'MJ Santner':111,
+          'Mukesh Choudhary' : 111,  'Prashant Solanki':111, 'Rajvardhan Hangargekar':111, 'Sameer Rizvi':111,}
 
 #TEAM 4
 kkr = ['N Rana','AD Russell', 'UT Yadav', 'SP Narine','Rahmanullah Gurbaz', 
