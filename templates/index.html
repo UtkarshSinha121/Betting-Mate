@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>
-      {% block title %} {% endblock title %} - IPl Dream 11 Team Prediction
+      {% block title %} {% endblock title %} Betting Mate!
     </title>
 
     <!-- Bootstrap CSS -->
@@ -61,7 +61,7 @@
             class="mx-5 fs-1 text-white"
             style="font-family: 'Dancing Script'; font-weight: '2000px'"
           >
-            Betting Mate!
+          <a class="decor" href="/">Betting Mate!</a>  
           </h3>
         </div>
         <button
@@ -83,16 +83,16 @@
         >
           <ul class="navbar-nav ms-auto mb-2">
             <li class="nav-item active">
-              <a class="nav-link" href="/">Home</a>
+              <a class="nav-link" href="/index">Predictor</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Login</a>
+              <a class="nav-link" href="#">Matches</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Signup</a>
+              <a class="nav-link" href="#">Teams</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">About</a>
+              <a class="nav-link" href="#">Fantasy</a>
             </li>
           </ul>
         </div>
@@ -148,7 +148,7 @@
             <div class="image-container">
               <img
                 class="image-width"
-                src="{{ url_for('static', filename='gt.jpg') }}"
+                src="{{ url_for('static', filename='gt1.jpg') }}"
                 alt="Gujarat Titans"
               />
             </div>
@@ -189,7 +189,7 @@
             <div class="form-in">
               <form method="POST">
                 <div class="form-op" id="select">
-                  <select name="team1" class="custom-select">
+                  <select name="team1" class="custom-select" id="team1">
                     <option>Select Team 1</option>
                     <option value="MI">Mumbai Indians</option>
                     <option value="CSK">Chennai Super Kings</option>
@@ -205,7 +205,7 @@
                 </div>
                 <br />
                 <div class="form-op" id="select2">
-                  <select name="team2" class="custom-select">
+                  <select name="team2" class="custom-select" id="team2">
                     <option>Select Team 2</option>
                     <option value="MI">Mumbai Indians</option>
                     <option value="CSK">Chennai Super Kings</option>
@@ -349,6 +349,17 @@
           }
         });
       };
+    </script>
+    <script>
+      document.querySelector('form').addEventListener('submit', function(event) {
+        var team1 = document.querySelector('#team1').value;
+        var team2 = document.querySelector('#team2').value;
+    
+        if (team1 === team2) {
+          event.preventDefault();
+          alert('Team names cannot be the same.');
+        }
+      });
     </script>
   </body>
 </html>

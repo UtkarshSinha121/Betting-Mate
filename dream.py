@@ -119,6 +119,7 @@ lsg_fp = { 'KL Rahul':111 , 'Avesh Khan':111 , 'A Badoni':111, 'DJ Hooda':111 , 
                'JD Unadkatt':111,'N Pooran':111 , }
 
 def get_players(team1,team2,team1_fp):
+    
     fantasy_team_players = []
 
     for i in range(len(team1)):

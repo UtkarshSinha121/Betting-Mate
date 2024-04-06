@@ -21,3 +21,11 @@ nav {
   font-size: larger;
   text-shadow: 1px 1px 1px white;
 }
+.decor{
+  text-decoration: none;
+  color: white;
+}
+.decor:hover{
+  text-decoration: none;
+  color: white;
+}
