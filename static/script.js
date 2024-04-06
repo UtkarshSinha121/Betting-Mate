@@ -3,10 +3,10 @@
 // Here's a simple example using jQuery:
 
 $(document).ready(function () {
-    $('form').submit(function (event) {
-        event.preventDefault(); // Prevent the default form submission behavior
+  $("form").submit(function (event) {
+    event.preventDefault(); // Prevent the default form submission behavior
 
-        // Add your form handling logic here, e.g., AJAX request, validation, etc.
-        alert('Form submitted!'); // Replace this with your logic
-    });
+    // Add your form handling logic here, e.g., AJAX request, validation, etc.
+    alert("Form submitted!"); // Replace this with your logic
+  });
 });

@@ -1,6 +1,5 @@
 from flask import Flask, request, render_template,redirect,url_for
 import matplotlib.pyplot as plt
-#import seborn as sns
 import pandas as pd
 import numpy as np
 
@@ -119,91 +118,6 @@ lsg_fp = { 'KL Rahul':111 , 'Avesh Khan':111 , 'A Badoni':111, 'DJ Hooda':111 , 
                'Yudhvir Charak':111,'Naveen-ul-Haq':111 , 'Swapnil Singh':111 , 'PN Mankad':111, 'A Mishra':111 , 'Daniel Sams':111, 'R Shepherd':111, 'Yash Thakur':111 ,
                'JD Unadkatt':111,'N Pooran':111 , }
 
-'''
-team1 = lsg; team2 = gt              #team1 v Team2
-
-for i in range(len(team1)):
-    ffp = []
-    for j in range(len(team2)):
-        bat_vs_bowl = byb[(byb["batsman"]==team1[i]) & (byb["bowler"]==team2[j])]
-        bowls_played = len(bat_vs_bowl.batsman_runs)
-        runs_scored = sum(bat_vs_bowl.batsman_runs)
-        fours = len(bat_vs_bowl[bat_vs_bowl['batsman_runs']==4])
-        sixes = len(bat_vs_bowl[bat_vs_bowl['batsman_runs']==6])
-        wicket = sum(bat_vs_bowl.is_wicket)
-        if bowls_played <=6*10 and wicket >=5:
-            penalty = -16
-            k =  print (team1[i], "'s wicket taken",wicket,"times by", team2[j])
-        elif bowls_played <=6*8 and wicket >=4:
-            penalty = -8
-            l = print (team1[i], "'s wicket taken",wicket,"times by", team2[j])
-        elif bowls_played <=6*6 and wicket >=3:
-            penalty = -4
-            p =print (team1[i], "'s wicket taken",wicket,"times by", team2[j])
-        else:
-            penalty = 0
-        try:    
-            strike_rate = int(runs_scored/bowls_played*100)
-        except: 
-            strike_rate = 'NA'
-
-        if bowls_played >=8 and strike_rate!='NA':
-            if strike_rate >=170:
-               n =  print (team1[i] ,"beaten", team2[j], "Runs", runs_scored,"bowls",bowls_played,"strike rate", strike_rate,'Out',wicket,'times', "Fours", fours,"Sixes", sixes)            
-            elif strike_rate >=150:
-               m =  print (team1[i] ,"beaten", team2[j], "Runs", runs_scored,"bowls",bowls_played,"strike rate", strike_rate,'Out',wicket,'times', "Fours", fours,"Sixes", sixes)            
-                        
-        bowl_vs_bat = byb[(byb["bowler"]==team1[i]) & (byb["batsman"]==team2[j])]
-        wicket_took = sum(bowl_vs_bat.is_wicket)
-        fantasy_points1 = runs_scored + fours*Batsman_points['bFour'] + sixes*Batsman_points['bSix'] - wicket*Bowling_points['Wicket'] + wicket_took*Bowling_points['Wicket'] + penalty
-        pd.DataFrame(ffp.append(fantasy_points1))
-        #print (team1[i] ,"against", team2[j], "Runs", runs_scored, 
-        #     "bowls",bowls_played,"strike rate", strike_rate,
-         #      'Out',wicket,'times', "Fours", fours,"Sixes", sixes)
-
-team1 = gt; team2 = lsg                     #Team2 v Team1
-
-for i in range(len(team1)):
-    ffp=[]
-    for j in range(len(team2)):
-        bat_vs_bowl = byb[(byb["batsman"]==team1[i]) & (byb["bowler"]==team2[j])]
-        bowls_played = len(bat_vs_bowl.batsman_runs)
-        runs_scored = sum(bat_vs_bowl.batsman_runs)
-        fours = len(bat_vs_bowl[bat_vs_bowl['batsman_runs']==4])
-        sixes = len(bat_vs_bowl[bat_vs_bowl['batsman_runs']==6])
-        wicket = sum(bat_vs_bowl.is_wicket)
-        if bowls_played <=6*10 and wicket >=5:
-            penalty = -16
-            print (team1[i], "'s wicket taken",wicket,"times by", team2[j])
-        elif bowls_played <=6*8 and wicket >=4:
-            penalty = -8
-            print (team1[i], "'s wicket taken",wicket,"times by", team2[j])
-        elif bowls_played <=6*6 and wicket >=3:
-            penalty = -4
-            print (team1[i], "'s wicket taken",wicket,"times by", team2[j])
-        else:
-            penalty = 0
-        try:    
-            strike_rate = int(runs_scored/bowls_played*100)
-        except: 
-            strike_rate = 'NA'
-
-        if bowls_played >=8 and strike_rate!='NA':
-            if strike_rate >=170:
-                print (team1[i] ,"beaten", team2[j], "Runs", runs_scored,"bowls",bowls_played,"strike rate", strike_rate,'Out',wicket,'times', "Fours", fours,"Sixes", sixes)            
-            elif strike_rate >=150:
-                print (team1[i] ,"beaten", team2[j], "Runs", runs_scored,"bowls",bowls_played,"strike rate", strike_rate,'Out',wicket,'times', "Fours", fours,"Sixes", sixes)            
-                        
-        bowl_vs_bat = byb[(byb["bowler"]==team1[i]) & (byb["batsman"]==team2[j])]
-        wicket_took = sum(bowl_vs_bat.is_wicket)
-        fantasy_points1 = runs_scored + fours*Batsman_points['bFour'] + sixes*Batsman_points['bSix'] - wicket*Bowling_points['Wicket'] + wicket_took*Bowling_points['Wicket'] + penalty
-        ffp.append(fantasy_points1)
-        #print (team1[i] ,"against", team2[j], "Runs", runs_scored, 
-             #   "bowls",bowls_played,"strike rate", strike_rate,
-              # 'Out',wicket,'times', "Fours", fours,"Sixes", sixes, 'fantasy_points', fantasy_points1)
-
-'''
-
 def get_players(team1,team2,team1_fp):
     fantasy_team_players = []
 
@@ -307,34 +221,17 @@ def get_players(team1,team2,team1_fp):
 #         print ("Fatasy points of",team1[i],final_fantasy_point)
     return fantasy_team_players
 
-'''
-def selection1():
-    players_df = pd.read_excel('{Team_1}.xlsx')
-    players = players_df['player_name'].tolist()
-    selected_players = request.form.getlist('player')
-    # Ensure exactly 11 players are selected
-    if len(selected_players) == 11:
-        # Store selected players in the Team list
-        Team_1 = selected_players
 
-def selection2(Team_2):
-    players_df = pd.read_excel('{Team_2}.xlsx')
-    players = players_df['player_name'].tolist()
-'''
 
 @app.route('/')
-def login():
-    # Render the 'login.html' template
-    return render_template('login.html')
-
-@app.route('/home')
 def home():
+    # Render the 'login.html' template
     return render_template('home.html')
 
+@app.route('/login')
+def login():
+    return render_template('login.html')
 
-@app.route('/about')
-def about():
-    return render_template('about.html')
 
 @app.route('/contact')
 def contact():

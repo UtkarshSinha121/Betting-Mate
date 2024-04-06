@@ -4,31 +4,31 @@
   padding: 0;
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
-
 }
-html,
+/* html,
 body {
-  display: grid;
-  height: 100%;
+  height: 105%;
   width: 100%;
   place-items: center;
-  background: #d4d4d4;    /*  BAckground  */
-  background-image: url('/static/bgimage.png') ; 
-  background-size: 20%; /* Cover the entire background */
+  background: #5364ff; 
+  background-color: #0400ff;   
+  background-image: url('/static/cricket.jpg') ;  
   background-position: center;
+  background-color: #0400ff;
  
-}
+} */
 ::selection {
-  background: green;
+  background: rgb(13, 0, 128);
   color: #fff;
 }
 .wrapper {
   overflow: hidden;
   max-width: 390px;
+
   background: #fff;
   padding: 30px;
   border-radius: 15px;
-  box-shadow: 10px 15px 20px green;
+  box-shadow: 10px 15px 20px rgb(3, 13, 103);
 }
 .wrapper .title-text {
   display: flex;
@@ -49,7 +49,7 @@ body {
   overflow: hidden;
   margin: 30px 0 10px 0;
   justify-content: space-between;
-  border: 1px solid rgb(100, 255, 10);
+  border: 1px solid rgb(10, 18, 255);
   border-radius: 15px;
 }
 .slide-controls .slide {
@@ -74,7 +74,13 @@ body {
   left: 0;
   z-index: 0;
   border-radius: 15px;
-  background: -webkit-linear-gradient(left, rgb(95, 25, 9), #b2230a, #ff0606, #ff6161);
+  background: -webkit-linear-gradient(
+    left,
+    rgb(9, 8, 78),
+    #0b0991,
+    #2005b5,
+    #3b32be
+  );
   transition: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
 input[type="radio"] {
@@ -127,7 +133,7 @@ input[type="radio"] {
   transition: all 0.3s ease;
 }
 .form-inner form .field input:focus {
-  border-color: #ff0000;
+  border-color: #0400ff;
   /* box-shadow: inset 0 0 3px #fb6aae; */
 }
 .form-inner form .field input::placeholder {
@@ -135,7 +141,7 @@ input[type="radio"] {
   transition: all 0.3s ease;
 }
 form .field input:focus::placeholder {
-  color: #e40e0e;
+  color: #110ee4;
 }
 .form-inner form .pass-link {
   margin-top: 5px;
@@ -146,7 +152,7 @@ form .field input:focus::placeholder {
 }
 .form-inner form .pass-link a,
 .form-inner form .signup-link a {
-  color: #ff0000;
+  color: #0d00ff;
   text-decoration: none;
 }
 .form-inner form .pass-link a:hover,
@@ -167,7 +173,10 @@ form .btn .btn-layer {
   left: -100%;
   background: -webkit-linear-gradient(
     right,
-    rgb(95, 25, 9), #b2230a, #ff0606, #ff6161
+    rgb(9, 8, 78),
+    #0b0991,
+    #2005b5,
+    #3b32be
   );
   border-radius: 15px;
   transition: all 0.4s ease;
@@ -188,4 +197,13 @@ form .btn input[type="submit"] {
   font-size: 20px;
   font-weight: 500;
   cursor: pointer;
+}
+.bg-clr {
+  background: -webkit-linear-gradient(
+    left,
+    rgb(119, 117, 255),
+    #9c9aff,
+    #beb3ff,
+    #e3e2fd
+  );
 }
